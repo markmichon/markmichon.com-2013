@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="page-head page-head-center page-head-dark">
+        <div class="wrap">
+          <h1 class="page-title medium">Designing for the human condition.</h1>
+          <p>Hi, my name is <a href="/about" title="Learn more about Mark Michon">Mark Michon</a> and I <a href="/work" title="See some of Mark's work.">design interfaces</a> for people<span class="touch-hidden" data-tip="and maybe cats or robots someday...">*</span>. I also <a href="/words">write</a> a bit about design, education, and the world.<a href="/about">More about me.</a></p>
+        </div>
+      </div>
+    <section class="main">
+      <div class="main-articles">
+        <h2>Recent Articles</h2>
+        <ul>
+          {% for post in site.categories.article limit:6 %}
+          <li class="main-articles-item">
+            <a href="{{ post.url }}">
+              <h3>{{ post.title }}</h3>
+              <p>{{ post.subtitle }}</p>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="more-link"><a href="/words">View More Articles</a></div>
+      </div>
+      <div class="main-projects">
+        <h2>Recent Projects</h2>
+        {% for post in site.categories.work limit:2 %}
+        <a class="project-block" href="{{ post.url }}" title="{{ post.title }}">
+          <figure>
+            <img src="{{ post.preview_img }}" alt="{{ post.title Preview Image }}" />
+            <figcaption class="project-caption">{{ post.title }}</figcaption>
+          </figure>
+        </a>
+          {% endfor %}
+        <div class="more-link"><a href="/work">More Projects</a></div>
+      </div>
+    </section>

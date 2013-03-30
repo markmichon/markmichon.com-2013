@@ -1,0 +1,25 @@
+---
+layout: default
+permalink: /words/
+title: Words
+---
+
+<div class="page-head page-head-center page-head-dark">
+  <div class="wrap">
+    <h1 class="page-title">Words</h1>
+    <p>Articles on Design, Development, Education, and random musings about the world.</p>
+  </div>
+</div>
+    <section class="archives">
+       {% for post in site.posts %}
+        {% if post.category == "article" %}
+        <article class="article-block">
+          <a href="{{ post.url }}">
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.subtitle}}</p>
+            <time class="datestamp">{{ post.date | date: "%m/%d/%Y" }}</time>
+          </a>
+        </article>
+        {% endif %}
+        {% endfor %}
+    </section>

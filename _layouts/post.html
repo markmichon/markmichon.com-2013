@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+    <article>
+      <header class="page-head page-head-center page-head-dark">
+        <div class="wrap">
+        <h1 class="page-title">{{ page.title }}</h1>
+        <p>{{ page.subtitle }}</p>
+      </div>
+      </header>
+      <div class="article-body">
+        <div class="article-inner">
+          <div class="article-meta">
+            <ul>
+              <li><time>{{ page.date | date: "%m/%d/%Y" }}</time></li>
+              <li><a href="http://twitter.com/share?url=http://{{site.url}}{{page.url}}&amp;text={{page.title}}">Tweet<a/></li>
+              <li><a href="http://www.facebook.com/sharer.php?u=http://{{site.url}}{{ page.url }}&amp;t={{page.title}}">Share on Facebook</a></li>
+              <!-- <li>Reading time: {{ content | count_minutes }}</li> -->
+            </ul>
+          </div>
+          {{ content }}
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname = 'markmichon';
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+    </article>

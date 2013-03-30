@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Mark Michon -- @markmichon
+
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, SCSS, JEKYLL,
+    Bourbon.io

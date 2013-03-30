@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Mark Michon</title>
+    <description>Articles on Design, Development, Education, and Life by Mark Michon</description>
+    <link>markmichon.com</link>
+    
+      <item>
+        <title>Removing the Barrier</title>
+        <description>&lt;p&gt;It seems like every day a new tool is released to enable us. To make us better at our craft. Something new to learn with the promise of an improved workflow. Higher Productivity.&lt;/p&gt;
+
+&lt;p&gt;The problem comes when we put too much between our minds and the end result. This is why writing and sketching are so beneficial to getting started on a project. There is little to no resistance between our thoughts and the page. An idea comes to us, and we do something with it. No booting up photoshop, loading a browser, or worry of saves and versions.&lt;/p&gt;
+
+&lt;p&gt;This is not to say that our tools do not better us, they certainly do. The trick is to find a tool that minimizes the barrier. Easily learnable, highly memorable, and an extension of our talents.
+&lt;figure class=&quot;center&quot;&gt;
+  &lt;img src=&quot;/assets/img/seed.png&quot; /&gt;
+  &lt;figcaption&gt;Illustration of a Seed. Made with Sketch&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;The minimalist writing environment has taken off with apps like &lt;a href=&quot;http://bywordapp.com/&quot;&gt;Byword&lt;/a&gt; and &lt;a href=&quot;http://www.iawriter.com/mac/&quot;&gt;iA Writer&lt;/a&gt;, and I hope the trend continues to other systems. Applications like &lt;a href=&quot;http://bohemiancoding.com/sketch&quot;&gt;Sketch&lt;/a&gt; are a fantastic step in the right direction; software that just makes sense and doesn’t get in the way.&lt;/p&gt;
+
+&lt;p&gt;A key part of user experience that seems to get lost in large systems is enjoyment. We like products that make our lives easier and help us do our jobs better, but we &lt;em&gt;love&lt;/em&gt; products that do all that and make us feel good at the same time.&lt;/p&gt;
+</description>
+        <published>2013-03-29 00:00:00 -0400</published>
+        <link>markmichon.com/removing-the-barrier</link>
+      </item>
+    
+      <item>
+        <title>Initial impressions of Jekyll</title>
+        <description>&lt;p&gt;This site is powered, in part, by &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;. The semi-static, blog-aware, site-building platform that works similarly to many blogging systems except everything happens locally before being pushed to the server as static files. It is intended as a blogging platform for hackers and in may way this is true; it feels like it was made by a developer for developers.&lt;/p&gt;
+
+&lt;p&gt;I chose Jekyll for a handful of reasons (more on those later), but the primary one was that many people in the community such as &lt;a href=&quot;http://csswizardry.com&quot;&gt;Harry Roberts&lt;/a&gt;, &lt;a href=&quot;http://davegamache.com&quot;&gt;Dave Gamache&lt;/a&gt;, and &lt;a href=&quot;http://paulstamatiou.com/&quot;&gt;Paul Stamatiou&lt;/a&gt; have switched to it in the past year or so. These three create great work, and their adoption of the tool convinced me that the flaws I perceived may not be so bad.&lt;/p&gt;
+
+&lt;p&gt;This is not an article about how to use Jekyll. There are plenty of those out there and I may write one eventually, but this is an analysis on the system from the standpoint of a designer &amp;amp; front-end dev.&lt;/p&gt;
+
+&lt;h2&gt;Learning not to hate&lt;/h2&gt;
+
+&lt;p&gt;I like trying new platforms and languages. I find it makes me not only a better developer, but a better designer. I learned the web, as many of my generation, by experimenting and failing. Deciding on Jekyll was an exercise in learning not to hate a system that is the opposite of everything I stand for as a designer. &lt;em&gt;Simple&lt;/em&gt; means something different to me than it does to the Jekyll community.&lt;/p&gt;
+
+&lt;p&gt;There are certainly aspects that are simple, such as creating posts and deploying to a server. There are other aspects that are cumbersome, like troubleshooting and finding resources. Simple is relative in this case.&lt;/p&gt;
+
+&lt;h2&gt;YAML, templating, and skipping the bs&lt;/h2&gt;
+
+&lt;p&gt;This may be the single greatest aspect of the semi-static movement. The ability to create your own conventions by merely defining them in the front-matter of the post is great. A quick glance at the &lt;a href=&quot;http://codex.wordpress.org/Template_Tags&quot;&gt;template tag doc&lt;/a&gt; for Wordpress makes me die a little inside. Not to mention the half dozen pages I traversed to find it. This is where the simple keyword in Jekyll makes sense. I’m building the page, let me do what I want and get out of the way.&lt;/p&gt;
+
+&lt;p&gt;The templating in Jekyll really excels for front-end devs. It is very close to the JS templating systems that keep cropping up these days, and even for those with only html/css experience, the learning curve is low and void of any strange, interruptive syntax combinations.&lt;/p&gt;
+
+&lt;h2&gt;Starting from scratch&lt;/h2&gt;
+
+&lt;p&gt;Many “How to use Jekyll” articles talk about how it lacks a starting point. To some extent I agree with them, but having installed wordpress again after years of not using it, I realized that a starting point isn’t always helpful, and can be incredibly overwhelming for someone who has full intentions of building a site rather than using a pre-made theme.&lt;/p&gt;
+
+&lt;p&gt;The boilerplate approach would certainly help Jekyll out a bit. In fact this tends to be the recommendation by most users. Copy someone’s repo, and tweak it.&lt;/p&gt;
+
+&lt;h2&gt;The classic fault of developer-designed apps&lt;/h2&gt;
+
+&lt;p&gt;This one is a bit of a stereotype, but Jekyll falls right into it. The demographic is developers, hackers, and coders; this shouldn’t mean that error messaging needn’t exist. A simple problem such as an extra space after the triple-dash in YAML’s front-matter causes the entire page not to render, with no mention of the problem. This seems like such a silly oversight that could have been avoided.&lt;/p&gt;
+
+&lt;p&gt;Github’s Mac app has been known for similar problems with error messaging, so I often wonder if this is an oversight or a common part of the company’s approach to product (Jekyll’s creator is one of Github’s founders. I by no means intend to connect the two but I couldn’t help but notice this similarity).&lt;/p&gt;
+
+&lt;h2&gt;Fragmentation&lt;/h2&gt;
+
+&lt;p&gt;Due in part to the name, and in part to the lack of aggregation, it can be difficult to find proper resources. There are some phenomenal articles written by people like &lt;a href=&quot;http://paulstamatiou.com/how-to-wordpress-to-jekyll&quot;&gt;Paul Stamatiou&lt;/a&gt; and &lt;a href=&quot;http://www.andrewmunsell.com/tutorials/jekyll-by-example/&quot;&gt;Andrew Munsell&lt;/a&gt;, but information is scattered and niche features are often found by browsing the source code of a person’s setup on github (if they provide it).&lt;/p&gt;
+
+&lt;p&gt;The other issue comes with the nature of github and the encouragement to fork Jekyll. I love the concept, but this is complex for non-rubyists and seems counter-intuitive to a plugin culture.  There are also interesting projects like &lt;a href=&quot;http://octopress.org/&quot;&gt;Octopress&lt;/a&gt;, but these look to be really focused on creating a &lt;abbr title=“Wordpress”&gt;WP&lt;/abbr&gt; style environment with pre-built templates and that generic &lt;em&gt;bootstrapped&lt;/em&gt; feel. They also seem to add an extra level of structure, rather than modifying that which is found in Jekyll.&lt;/p&gt;
+
+&lt;h2&gt;Accepting the obvious&lt;/h2&gt;
+
+&lt;p&gt;I chose Jekyll because I wanted to avoid php on a site where it truly shouldn’t be necessary, and it certainly delivers in that respect. Wordpress has become the Walmart of CMS, and many paid alternatives look a bit cumbersome.&lt;/p&gt;
+
+&lt;p&gt;The harsh truth is that I’m not sure a great, simple to template, low barrier of entry CMS really exists anymore. I also chose it knowing that the flat-file, markdown format allows for perhaps the easiest migration from one system to another, and perhaps one day that may happen.&lt;/p&gt;
+
+&lt;p&gt;I have a feeling the likes of Kirby or Statamic might be the best of both worlds, but I hope as Jekyll’s development continues it will progress into a more cohesive system.&lt;/p&gt;
+</description>
+        <published>2013-03-29 00:00:00 -0400</published>
+        <link>markmichon.com/initial-impressions-of-jekyll</link>
+      </item>
+    
+      <item>
+        <title>The problem with teaching to test</title>
+        <description>&lt;p&gt;I remember watching &lt;a href=&quot;http://www.ted.com/talks/ken_robinson_says_schools_kill_creativity.html&quot;&gt;Sir Ken Robinson’s TED Talk&lt;/a&gt; a few years ago, and while inspiring and thought provoking I had not yet seen how accurate his words really were.&lt;/p&gt;
+
+&lt;p&gt;As I transitioned into higher education the thing that really stood out to me was the way my students were looking at problems. While there are certainly a few outliers, the majority look at problems they face as having a binary answer. Yes or no, zero or one, right or wrong. Those of us in design, and development to a great extent, know that while this may happen from time to time it is rarely the case.&lt;/p&gt;
+
+&lt;p&gt;The problem, I believe, is a direct result of the way our primary and secondary education system has (d)evolved into a &lt;em&gt;teach to test&lt;/em&gt; environment.  Students are taught what they need in order to pass an exam. This is the path of least resistance, and the path to the highest funding possible for most school systems. Thought is taken out of the equation, and recollection replaces it.&lt;/p&gt;
+
+&lt;p&gt;Memory seems like quite a backward approach, considering our near-constant connection to answers. The ability to learn, to solve, and to adapt is what these graduates are currently lacking. Fortunately post-secondary does a fair effort of combatting this problem, depending on the subject matter.&lt;/p&gt;
+
+&lt;p&gt;So how do we fix it? How do we enable students to look beyond a grade? Beyond primitive thought? Beyond yes or no?&lt;/p&gt;
+
+&lt;p&gt;We teach them to stop asking “What?”, and start asking “Why?” &amp;amp; &quot;How&quot;&lt;/p&gt;
+</description>
+        <published>2013-03-28 00:00:00 -0400</published>
+        <link>markmichon.com/the-problem-with-teaching-to-test</link>
+      </item>
+    
+      <item>
+        <title>Exploring the Moon</title>
+        <description>&lt;p&gt;This project came about from the mutual needs of a fellow faculty member as well as an opportunity to appear on &lt;a href=&quot;http://www.youtube.com/watch?v=uzIqpZUENXw&quot;&gt;This Week in Webdesign&lt;/a&gt;. The goals for each source varied slightly, but the basis was a basic HTML and CSS page, well formed and semantic, that could be used to describe the process and concepts of basic front-end development to beginners.&lt;/p&gt;
+
+&lt;p&gt;&lt;figure class=&quot;center&quot;&gt;
+  &lt;img src=&quot;/assets/img/moon-logo.jpg&quot; /&gt;
+  &lt;figcaption&gt;Exploring the Moon Headline&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;The topic spawned from the need for something universal, non-technical, and with content freely available in the public domain (or at the very least easily licensed).&lt;/p&gt;
+
+&lt;h2&gt;Challenges&lt;/h2&gt;
+
+&lt;p&gt;The biggest challenge came with designing something that was simple enough to discuss in a short period of time, as well as complex enough to successfully demonstrate many html elements without overwhelming the student.&lt;/p&gt;
+
+&lt;p&gt;&lt;figure class=&quot;center&quot;&gt;
+  &lt;img src=&quot;/assets/img/moon-footer.jpg&quot; /&gt;
+  &lt;figcaption&gt;Basic footer &amp;amp; nav demonstration&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;There seems to be a trend in most basic html/css courses that results in poorly designed demonstration sites, about overly technical topics. My goal was to create something that was both simple, fun, and nice to look at.&lt;/p&gt;
+
+&lt;p&gt;See the project and explore the code on Github: &lt;a href=&quot;https://github.com/markmichon/html-demo&quot;&gt;source&lt;/a&gt; — &lt;a href=&quot;http://markmichon.github.com/html-demo/complete&quot;&gt;demo&lt;/a&gt;&lt;/p&gt;
+</description>
+        <published>2013-03-19 00:00:00 -0400</published>
+        <link>markmichon.com/exploring-the-moon</link>
+      </item>
+    
+  </channel>
+</rss>

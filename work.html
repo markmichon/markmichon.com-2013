@@ -1,0 +1,25 @@
+---
+layout: default
+title: Work
+permalink: /work/
+---
+<div class="page-head page-head-center page-head-dark">
+       <div class="wrap">
+          <h1 class="page-title">Work</h1>
+          <p>Selected Design &amp; Development Projects. More coming soon.</p>
+        </div>
+    </div>
+    <section class="main">
+       {% for post in site.posts %}
+        {% if post.category == "work" %}
+      <div class="whole tab-half">
+         <a class="project-block" href="{{ post.url }}" title="{{ post.title }}">
+          <figure>
+            <img src="{{ post.preview_img }}" alt="{{ post.title Preview Image }}" />
+            <figcaption class="project-caption">{{ post.title }}</figcaption>
+          </figure>
+        </a>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </section>

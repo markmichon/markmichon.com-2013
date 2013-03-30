@@ -1,0 +1,20 @@
+name: "Mark Michon"
+description: "Articles on Design, Development, Education, and Life by Mark Michon"
+url: "markmichon.com"
+base_url: http://markmichon.com
+# base_url: /
+
+markdown: rdiscount
+permalink: /:title
+pygments: true
+# destination: ./_site
+# plugins: ./_plugins
+
+#Navigation
+navigation:
+- text: Words
+  url: /words/
+- text: Work
+  url: /work/
+- text: About
+  url: /about/

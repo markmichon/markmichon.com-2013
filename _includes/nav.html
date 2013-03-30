@@ -1,0 +1,11 @@
+<header class="global-head">
+        <div class="wrap">
+          <a href="/" class="logo"><h1>Mark Michon</h1></a>
+          <a class="nav-toggle"><span class="icon-menu"></span></a>
+          <ul class="nav">
+            {% for link in site.navigation %}
+            <li><a href="{{link.url}}" title="{{link.title}}" {% if page.url == link.url %} id="current" {% endif %}>{{link.text}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+    </header>
