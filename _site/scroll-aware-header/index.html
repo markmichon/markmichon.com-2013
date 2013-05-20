@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title> Creating a Scroll Dependent Navigation |  Mark Michon: Designer &amp; Front-end Developer</title>
+    <meta name="description" content="Designer and Front-end Web Developer based out of Orlando, FL.">
+    <meta name="author" content="Mark Michon">
+
+    <!-- Opengraph Meta -->
+    <meta property="og:type" content="article">
+<!--     <meta property="og:url" content=" /scroll-aware-header "> -->
+    <meta property="og:site_name" content="Mark Michon: Designer &amp; Front-end Developer">
+    <!-- <meta property="og:image" content="URL to an image"> -->
+    <meta property="og:title" content=" Creating a Scroll Dependent Navigation |  Mark Michon: Designer &amp; Front-end Developer">
+    <meta property="og:description" content="How to create a scroll-dependant main nav, like that found on this site. ">
+    <meta property="article:author" content="http://markmichon.com/about/">
+    <meta property="article:tag" content="Design, Front-end Development, Web Design">
+
+
+    <link rel=”author” href=”https://plus.google.com/103117307799452974340“/>
+    <link rel="stylesheet" href="/assets/css/markmichon.min.css"/>
+    <link rel="stylesheet" href="/assets/css/github.css"/>
+    <script type="text/javascript" src="//use.typekit.net/njb4bfp.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body lang="en">
+    <header class="global-head">
+        <div class="wrap">
+          <a href="/" class="logo"><h1>Mark Michon</h1></a>
+          <a class="nav-toggle"><span class="icon-menu"></span></a>
+          <ul class="nav">
+            
+            <li><a href="/words/" title="" >Words</a></li>
+            
+            <li><a href="/work/" title="" >Work</a></li>
+            
+            <li><a href="/about/" title="" >About</a></li>
+            
+          </ul>
+        </div>
+    </header>
+        <article>
+      <header class="page-head page-head-center page-head-dark">
+        <div class="wrap">
+        <h1 class="page-title">Creating a Scroll Dependent Navigation</h1>
+        <p>How to create a scroll-dependant main nav, like that found on this site.</p>
+      </div>
+      </header>
+      <div class="article-body">
+        <div class="article-inner">
+          <p>Fixed headers are popular in web design these days. They offer an extra layer of visual depth, as well as providing a way for the user to easily explore a site without returning to the top of a page. Unfortunately, there are a few drawbacks to this technique. Here is a <a href="http://codepen.io/markmichon/full/yicGB">live demo</a>, and here is the full, <a href="http://codepen.io/markmichon/pen/yicGB">coded version on codepen</a>.</p>
+
+<h2>A bit of theory and UX</h2>
+
+<p>Depending on the height of your header and the height of the users browser, valuable screen real estate may be sacrificed in order for your design to accommodate the fixed header. Additionally, depending on the type of content you have, a constant bar across the top of the viewport might draw focus away. This is especially noticeable with starker contrasts and text-heavy pages.</p>
+
+<p>When creating the scroll-dependent version, I set out to try and anticipate when the user might want to check the navigation. Generally, we find that when a user begins to scroll back up the page, they are attempting to either return back to a previous portion of the article or a different page of the site. With this in mind, I've decided that by monitoring the upward scroll of the page, we can create a fairly accurate <em>guess</em> that the user wants to go somewhere else.</p>
+
+<h2>Time for Some Code</h2>
+
+<p>Let's begin with the basic HTML and CSS:</p>
+
+<div class="highlight"><pre><code class="html">  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;global-header&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Home<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>About<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Contact<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+  ...
+</code></pre></div>
+
+
+<p>Adapt this as you like, the key is that we target our header in some way. In this case I use a class called 'global-header'.</p>
+
+<div class="highlight"><pre><code class="css">  <span class="o">...</span>
+  <span class="nc">.global-header</span> <span class="p">{</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#333</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#efefef</span><span class="p">;</span>
+    <span class="k">position</span><span class="o">:</span><span class="k">fixed</span><span class="p">;</span>
+    <span class="k">top</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+    <span class="k">left</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+    <span class="n">transition</span><span class="o">:</span> <span class="k">top</span> <span class="m">.2s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nc">.global-header-scrolling</span> <span class="p">{</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">-4em</span><span class="p">;</span> <span class="c">/* Height of the header */</span>
+  <span class="p">}</span>
+  <span class="o">...</span>
+</code></pre></div>
+
+
+<p>A few things to note here. Our global header starts visible. This is to make sure that it exists regardless of any javascript support that may or may not exist, but also to ensure that there isn't a strange flash during page load. I'm using top positioning rather than a height, because I prefer that it slides down rather than grows into view.</p>
+
+<p>The second class, which we haven't seen yet, is going to be applied to the header with javascript on our scroll event. Here I simply move the top position of the header up 4em. The amount will differ, but the navigation contained in my header currently has a height of 4em. Your mileage may vary, and you could even decide to dynamically determine the height with a bit of JS if you choose to do so.</p>
+
+<p>At this point we have a standard fixed header that follows the user as they scroll up and down the page. Now let us add the javascript. Note that I'm also using a bit of jQuery just to simplifiy the process, but this could also be done with any number of libraries, or even pure javascript if you see fit.</p>
+
+<div class="highlight"><pre><code class="javascript">  <span class="c1">//Requires JQuery or Zepto</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+
+  <span class="c1">// Cache Header</span>
+  <span class="kd">var</span> <span class="nx">$header</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.global-header&#39;</span><span class="p">);</span>
+
+  <span class="c1">// Get height of global-header to use later as starting point</span>
+  <span class="kd">var</span> <span class="nx">$hHeight</span> <span class="o">=</span> <span class="nx">$header</span><span class="p">.</span><span class="nx">height</span><span class="p">();</span>
+
+  <span class="c1">// Set initial position to current position on page</span>
+  <span class="kd">var</span> <span class="nx">prevTop</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">();</span>
+
+  <span class="c1">// Scroll event</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;scroll&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">st</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">();</span> <span class="c1">// Set scroll location</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">st</span> <span class="o">&gt;</span> <span class="nx">prevTop</span> <span class="o">&amp;&amp;</span> <span class="nx">st</span> <span class="o">&gt;</span> <span class="nx">$hHeight</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$header</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;global-header-scrolling&#39;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">$header</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;global-header-scrolling&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">prevTop</span> <span class="o">=</span> <span class="nx">st</span><span class="p">;</span>
+  <span class="p">});</span>
+
+<span class="p">});</span>
+</code></pre></div>
+
+
+<p>The comments should be rather straightfoward, but here's what we're doing:</p>
+
+<ol>
+<li>capturing our <code>.global-header</code> class and its height in variables.</li>
+<li>Setting an initial scroll value. This will normally be <code>0</code>, however if you are landing on the page somewhere that is not the top, this will capture it.</li>
+<li>Here's the important bits: We have no scroll-direction event in javascript, so we monitor scrolling in any direction. We then capture the scroll position with <code>scrollTop()</code> and then compare it against are previously set <code>prevTop</code> variable. If the number is greater, we add our <code>.global-header-scrolling</code> class to it. If not, we remove it. Finally we set our <code>prevTop</code> variable to the new top value.</li>
+<li>We also use the height value we determined earlier to make sure this doesn't occur at the very top of the page. You can adjust this as you see fit if perhaps you want the effect to only happen after a certain portion of the page.</li>
+</ol>
+
+
+<p>Our main event is cycling over and over as the page is scrolled, checking to see which direction the user is going. For a complete version of this technique, see <a href="http://codepen.io/markmichon/pen/yicGB">this codepen example</a>.</p>
+
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname = 'markmichon';
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+    </article>
+    <footer class="global-footer">
+      <div class="footer-inner">
+        <div class="footer-blurb">
+          <p>Handcrafted by <a href="/about">Mark Michon</a>. Powered by <a href="http://jekyllrb.com">Jekyll</a>. Hosted on <a href="http://www.asmallorange.com/?a_aid=mmichon">A Small Orange</a>.</p>
+        </div>
+        <div class="footer-links"> <!-- These need content -->
+         <span class="footer-title">Get in touch.</span>
+          <a class="icon" href="http://twitter.com/markmichon">twitter</a>
+          <a class="icon" href="http://dribbble.com/markmichon">dribbble</a>
+          <a class="icon" href="http://github.com/markmichon">github</a>
+          <a class="icon" href="http://linkedin.com/in/markmichon">linkedin</a>
+          <a class="icon" href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#104;&#x65;&#x6c;&#108;&#x6f;&#64;&#109;&#x61;&#x72;&#x6b;&#x6d;&#105;&#99;&#x68;&#x6f;&#x6e;&#x2e;&#99;&#x6f;&#x6d;">email</a>
+          <a class="icon" href="http://markmichon.com/feed.xml">rss</a>
+        </div>
+        <div class="footer-nav">
+          <a href="" class="js-top icon-arrow-up"><span class="hide">Back to top</span></a>
+        </div>
+      </div>
+    </footer>
+
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="/assets/js/jquery.fittext.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+<script type="text/javascript">
+  var GoSquared = {};
+  GoSquared.acct = "GSN-083454-W";
+  (function(w){
+    function gs(){
+      w._gstc_lt = +new Date;
+      var d = document, g = d.createElement("script");
+      g.type = "text/javascript";
+      g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+      var s = d.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(g, s);
+    }
+    w.addEventListener ?
+      w.addEventListener("load", gs, false) :
+      w.attachEvent("onload", gs);
+  })(window);
+</script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    var _gaq=[['_setAccount','UA-268884-2'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  </body>
+</html>

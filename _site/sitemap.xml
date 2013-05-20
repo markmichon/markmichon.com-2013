@@ -1,35 +1,28 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
-    <url>
-        <loc>http://markmichon.com/exploring-the-moon</loc>
-        <lastmod>2013-03-29T21:53:27-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://markmichon.com/the-problem-with-teaching-to-test</loc>
-        <lastmod>2013-03-29T21:46:39-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://markmichon.com/initial-impressions-of-jekyll</loc>
-        <lastmod>2013-03-29T21:46:39-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://markmichon.com/removing-the-barrier</loc>
-        <lastmod>2013-03-29T21:46:39-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://markmichon.com/about/</loc>
-        <lastmod>2013-03-29T21:49:23-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://markmichon.com/</loc>
-        <lastmod>2013-03-29T21:53:27-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://markmichon.com/words/</loc>
-        <lastmod>2013-03-29T21:49:15-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://markmichon.com/work/</loc>
-        <lastmod>2013-03-29T18:40:09-04:00</lastmod>
-    </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/scroll-aware-header</loc>
+    <lastmod>2013-05-09</lastmod>
+
+  </url>
+  <url>
+    <loc>/removing-the-barrier</loc>
+    <lastmod>2013-03-29</lastmod>
+
+  </url>
+  <url>
+    <loc>/initial-impressions-of-jekyll</loc>
+    <lastmod>2013-03-29</lastmod>
+
+  </url>
+  <url>
+    <loc>/the-problem-with-teaching-to-test</loc>
+    <lastmod>2013-03-28</lastmod>
+
+  </url>
+  <url>
+    <loc>/exploring-the-moon</loc>
+    <lastmod>2013-03-19</lastmod>
+
+  </url>
 </urlset>
